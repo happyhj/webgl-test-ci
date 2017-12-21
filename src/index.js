@@ -8,7 +8,7 @@ import {
 } from "three";
 import fetch from "unfetch";
 
-
+let WEBGL_SUPPORT;
 try { WEBGL_SUPPORT = canvas.getContext("webgl"); }
 catch (x) { WEBGL_SUPPORT = null; }
 
