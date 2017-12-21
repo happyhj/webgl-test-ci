@@ -8,6 +8,21 @@ import {
 } from "three";
 import fetch from "unfetch";
 
+
+try { WEBGL_SUPPORT = canvas.getContext("webgl"); }
+catch (x) { WEBGL_SUPPORT = null; }
+
+if (WEBGL_SUPPORT == null) {
+    try { WEBGL_SUPPORT = canvas.getContext("experimental-webgl");}
+    catch (x) { WEBGL_SUPPORT = null; }
+}
+
+if(WEBGL_SUPPORT) {
+	console.log("webgl available!");
+} else {
+	console.log("no gl");
+}
+
 const WIDTH = 500;
 const HEIGHT = 500;
 
